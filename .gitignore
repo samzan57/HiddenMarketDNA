@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+*.egg-info/
+pip-wheel-metadata/
+share/python-wheels/
+
+# Virtualenv
+venv/
+env/
+ENV/
+/.venv/
+
+# Jupyter
+.ipynb_checkpoints
+
+# VS Code
+.vscode/
+
+# Data
+data/
+
+# Logs, OS files
+.DS_Store
+Thumbs.db
+.env
