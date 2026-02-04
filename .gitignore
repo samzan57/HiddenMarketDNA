@@ -29,7 +29,7 @@ ENV/
 .vscode/
 
 # Data
-data/
+# data/
 
 # Logs, OS files
 .DS_Store
