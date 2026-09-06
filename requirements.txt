@@ -1,5 +1,21 @@
-python
 numpy
 pandas
 scikit-learn
-Matplotlib 
+matplotlib
+seaborn
+yfinance
+pyarrow
+fastparquet
+scipy
+statsmodels
+arch
+python-dotenv
+pytest
+
+# Optionnel — requis uniquement pour l'exécution live (src/execution/, src/live_trader.py)
+# et le dashboard de suivi (dashboard.py) ; le cœur du projet (recherche PCA/regimes,
+# backtesting, construction de portefeuille) n'en a pas besoin.
+ib_insync
+requests
+streamlit
+plotly
