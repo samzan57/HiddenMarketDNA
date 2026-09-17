@@ -1,6 +1,6 @@
 # HiddenMarketDNA
 
-**Détection de régimes de marché par PCA rolling, portefeuille market-neutral, et — en extension personnelle — modèle multi-facteurs, régimes HMM/GARCH et exécution live via IBKR.**
+**Détection de régimes de marché par PCA rolling, portefeuille market-neutral, et  en extension personnelle, modèle multi-facteurs, régimes HMM/GARCH et exécution live via IBKR.**
 
 ![Portfolio cumulative returns with detected market regimes](reports/figures/portfolio_regime_detection.png)
 
