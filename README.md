@@ -20,13 +20,13 @@ Le pipeline (`main.py`) est construit comme une succession de « sprints » acti
 
 | Sprint | Ajout | Origine |
 |---|---|---|
-| 1 | PCA statique + rolling, détection de régime par seuil de volatilité de PC1 | 🎓 Cœur du cursus |
-| 2 | Modèle multi-facteurs (momentum cross-sectionnel, quality) | 🎓 Cœur du cursus (économétrie financière) |
-| 3 | Régimes de marché par **HMM gaussien** (Baum-Welch, implémenté from scratch en NumPy) + GARCH | 🚀 Extension personnelle |
-| 4 | Construction de portefeuille optimisée (Mean-Variance, Risk Parity / Equal Risk Contribution) | 🎓 Cœur du cursus (optimisation, gestion de portefeuille) |
-| 5 | Exécution live paper trading via IBKR, alertes Telegram, automatisation Windows Task Scheduler | 🚀 Extension personnelle |
+| 1 | PCA statique + rolling, détection de régime par seuil de volatilité de PC1 |  Cœur du cursus |
+| 2 | Modèle multi-facteurs (momentum cross-sectionnel, quality) |  Cœur du cursus (économétrie financière) |
+| 3 | Régimes de marché par **HMM gaussien** (Baum-Welch, implémenté from scratch en NumPy) + GARCH |  Extension personnelle |
+| 4 | Construction de portefeuille optimisée (Mean-Variance, Risk Parity / Equal Risk Contribution) |  Cœur du cursus (optimisation, gestion de portefeuille) |
+| 5 | Exécution live paper trading via IBKR, alertes Telegram, automatisation Windows Task Scheduler |  Extension personnelle |
 
-### 🎓 Cœur du projet
+###  Cœur du projet
 
 **PCA & détection de régime**
 - PCA sur 8 ETF sectoriels US (XLK, XLF, XLE, XLV, XLI, XLY, XLP, XLU), rendements log
@@ -53,7 +53,7 @@ Le pipeline (`main.py`) est construit comme une succession de « sprints » acti
 - Backtest walk-forward strictement out-of-sample, sans *look-ahead bias*
 - Métriques : Sharpe, drawdown, contribution des facteurs
 
-### 🚀 Extension personnelle (au-delà du programme)
+###  Extension personnelle (au-delà du programme)
 
 Cette partie a été développée en autodidacte après le cœur du projet, par curiosité pour aller jusqu'au bout de l'idée (recherche → système en production). Je suis transparent sur le niveau : c'est un travail d'exploration personnelle, pas une compétence que je revendique maîtriser à un niveau professionnel.
 
@@ -63,7 +63,7 @@ Cette partie a été développée en autodidacte après le cœur du projet, par 
 - **`src/live_trader.py`** — boucle hebdomadaire complète : connexion IBKR → récupération du compte → génération du signal (PCA + Momentum + HMM/GARCH) → contrôle de risque → calcul et envoi des ordres → notification Telegram.
 - **`scripts/`** — automatisation via Windows Task Scheduler (exécution chaque lundi).
 
-⚠️ Système testé uniquement en **paper trading** (compte de simulation IBKR, aucun argent réel). Les paramètres de connexion (hôte, port, identifiant client) sont configurables via variables d'environnement — voir `.env.example`.
+ Système testé uniquement en **paper trading** (compte de simulation IBKR, aucun argent réel). Les paramètres de connexion (hôte, port, identifiant client) sont configurables via variables d'environnement — voir `.env.example`.
 
 ### Structure du projet
 
@@ -83,15 +83,15 @@ HiddenMarketDNA/
 │   ├── visualization.py           # Graphiques régimes/portefeuille
 │   ├── generate_csv.py            # Export des résultats
 │   ├── factor_backtest.py         # Backtest multi-facteurs (Sprint 2/3)
-│   ├── factors/                   # 🚀 momentum, quality, composite
-│   ├── regimes/                   # 🚀 HMM (from scratch), GARCH, gestion des régimes
-│   ├── optimization/              # 🎓 Mean-Variance, Risk Parity, contraintes
-│   ├── data/                      # 🚀 pipeline de données (fetch/clean/univers)
-│   ├── execution/                 # 🚀 client IBKR, gestion des ordres, garde-fous risque
-│   ├── live_trader.py             # 🚀 boucle de trading live
-│   ├── telegram_notify.py         # 🚀 notifications Telegram
+│   ├── factors/                   #  momentum, quality, composite
+│   ├── regimes/                   #  HMM (from scratch), GARCH, gestion des régimes
+│   ├── optimization/              #  Mean-Variance, Risk Parity, contraintes
+│   ├── data/                      #  pipeline de données (fetch/clean/univers)
+│   ├── execution/                 #  client IBKR, gestion des ordres, garde-fous risque
+│   ├── live_trader.py             #  boucle de trading live
+│   ├── telegram_notify.py         #  notifications Telegram
 │   └── utils/
-├── scripts/                       # 🚀 automatisation Windows Task Scheduler
+├── scripts/                       #  automatisation Windows Task Scheduler
 ├── notebooks/
 │   ├── 01_exploration.ipynb
 │   ├── 02_pca_static.ipynb
@@ -165,13 +165,13 @@ The pipeline (`main.py`) is built as a sequence of togglable "sprints", each add
 
 | Sprint | Adds | Origin |
 |---|---|---|
-| 1 | Static + rolling PCA, regime detection via a PC1 volatility threshold | 🎓 Core coursework |
-| 2 | Multi-factor model (cross-sectional momentum, quality) | 🎓 Core coursework (financial econometrics) |
-| 3 | Market regimes via a **Gaussian HMM** (Baum-Welch, implemented from scratch in NumPy) + GARCH | 🚀 Personal extension |
-| 4 | Optimized portfolio construction (Mean-Variance, Risk Parity / Equal Risk Contribution) | 🎓 Core coursework (optimization, portfolio management) |
-| 5 | Live paper-trading execution via IBKR, Telegram alerts, Windows Task Scheduler automation | 🚀 Personal extension |
+| 1 | Static + rolling PCA, regime detection via a PC1 volatility threshold |  Core coursework |
+| 2 | Multi-factor model (cross-sectional momentum, quality) |  Core coursework (financial econometrics) |
+| 3 | Market regimes via a **Gaussian HMM** (Baum-Welch, implemented from scratch in NumPy) + GARCH |  Personal extension |
+| 4 | Optimized portfolio construction (Mean-Variance, Risk Parity / Equal Risk Contribution) |  Core coursework (optimization, portfolio management) |
+| 5 | Live paper-trading execution via IBKR, Telegram alerts, Windows Task Scheduler automation |  Personal extension |
 
-### 🎓 Core of the project
+###  Core of the project
 
 **PCA & regime detection**
 - PCA on 8 US sector ETFs (XLK, XLF, XLE, XLV, XLI, XLY, XLP, XLU), log-returns
@@ -198,7 +198,7 @@ The pipeline (`main.py`) is built as a sequence of togglable "sprints", each add
 - Strict walk-forward, out-of-sample backtest, no look-ahead bias
 - Metrics: Sharpe ratio, drawdown, factor contribution
 
-### 🚀 Personal extension (beyond the syllabus)
+###  Personal extension (beyond the syllabus)
 
 This part was built independently after the core, out of curiosity to carry the idea all the way through (research → production system). I'm upfront about the level: this is personal exploration, not a skill I claim to have mastered professionally.
 
@@ -208,7 +208,7 @@ This part was built independently after the core, out of curiosity to carry the 
 - **`src/live_trader.py`** — full weekly loop: IBKR connection → account snapshot → signal generation (PCA + Momentum + HMM/GARCH) → risk check → order sizing and submission → Telegram notification.
 - **`scripts/`** — Windows Task Scheduler automation (runs every Monday).
 
-⚠️ Tested exclusively in **paper trading** (IBKR simulated account, no real money). Connection settings (host, port, client ID) are configurable via environment variables — see `.env.example`.
+ Tested exclusively in **paper trading** (IBKR simulated account, no real money). Connection settings (host, port, client ID) are configurable via environment variables — see `.env.example`.
 
 ### Project structure
 
@@ -228,15 +228,15 @@ HiddenMarketDNA/
 │   ├── visualization.py           # Regime/portfolio charts
 │   ├── generate_csv.py            # Results export
 │   ├── factor_backtest.py         # Multi-factor backtest (Sprint 2/3)
-│   ├── factors/                   # 🚀 momentum, quality, composite
-│   ├── regimes/                   # 🚀 HMM (from scratch), GARCH, regime management
-│   ├── optimization/              # 🎓 Mean-Variance, Risk Parity, constraints
-│   ├── data/                      # 🚀 data pipeline (fetch/clean/universe)
-│   ├── execution/                 # 🚀 IBKR client, order management, risk guards
-│   ├── live_trader.py             # 🚀 live trading loop
-│   ├── telegram_notify.py         # 🚀 Telegram notifications
+│   ├── factors/                   #  momentum, quality, composite
+│   ├── regimes/                   #  HMM (from scratch), GARCH, regime management
+│   ├── optimization/              #  Mean-Variance, Risk Parity, constraints
+│   ├── data/                      #  data pipeline (fetch/clean/universe)
+│   ├── execution/                 #  IBKR client, order management, risk guards
+│   ├── live_trader.py             #  live trading loop
+│   ├── telegram_notify.py         #  Telegram notifications
 │   └── utils/
-├── scripts/                       # 🚀 Windows Task Scheduler automation
+├── scripts/                       #  Windows Task Scheduler automation
 ├── notebooks/
 │   ├── 01_exploration.ipynb
 │   ├── 02_pca_static.ipynb
@@ -298,7 +298,7 @@ Python · pandas · NumPy · scikit-learn (PCA, Ledoit-Wolf) · SciPy (optimizat
 
 ## Author
 
-**Deo ZANTOKO** — Engineering student in Applied Mathematics, Mathematical Modelling for Finance & Insurance (MMFA), CY Tech
+**Deo ZANTOKO** — Engineering student in Applied Mathematics, Mathematical Modelling for Finance & Insurance (MMFA), CY Tech (EISTI)
 
 ## License
 
